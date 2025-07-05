@@ -1,5 +1,5 @@
 name: notes
-description: "A new Flutter project."
+description: "A flutter notes app with firebase as backend"
 publish_to: 'none'
 version: 0.1.0
 
@@ -9,6 +9,18 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
+  # Firebase
+  firebase_core: ^3.15.1
+  firebase_auth: ^5.6.2
+  cloud_firestore: ^5.6.11
+
+  # State management
+  flutter_bloc: ^9.1.1
+  equatable: ^2.0.7
+
+  # Dependency Injection
+  get_it: ^8.0.3
 
 dev_dependencies:
   flutter_test:
