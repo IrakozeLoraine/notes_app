@@ -28,9 +28,18 @@ class MainApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        title: 'Notes App',
+        title: 'Notes',
         theme: ThemeData(
+          inputDecorationTheme: InputDecorationTheme(
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8.0),
+              borderSide: BorderSide(color: Colors.grey),
+            ),
+          ),
           primarySwatch: Colors.blue,
+          colorScheme: ColorScheme.fromSwatch().copyWith(
+            primary: Colors.blueAccent,
+          ),
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         home: const LoginScreen(),
