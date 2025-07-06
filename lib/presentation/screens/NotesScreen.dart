@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes/core/utils/snackbar_utils.dart';
 import 'package:notes/domain/entities/note.dart';
 import 'package:notes/presentation/bloc/auth/auth_bloc.dart';
 import 'package:notes/presentation/bloc/notes/notes_bloc.dart';
@@ -45,9 +46,10 @@ class _NotesScreenState extends State<NotesScreen> {
                     TextButton(
                       onPressed: () {
                         context.read<AuthBloc>().add(SignOutRequested());
-                        Navigator.pushReplacement(
+                        Navigator.pushAndRemoveUntil(
                           context,
                           MaterialPageRoute(builder: (context) => const LoginScreen()),
+                          (route) => false,
                         );
                       },
                       child: const Text('Sign Out'),
@@ -62,23 +64,9 @@ class _NotesScreenState extends State<NotesScreen> {
       body: BlocConsumer<NotesBloc, NotesState>(
         listener: (context, state) {
           if (state is NotesOperationSuccess) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text(state.message),
-                backgroundColor: Colors.green,
-                behavior: SnackBarBehavior.floating,
-                duration: const Duration(seconds: 2),
-              ),
-            );
+            SnackBarUtils.showSuccess(context, state.message);
           } else if (state is NotesError) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text(state.message),
-                backgroundColor: Colors.red,
-                behavior: SnackBarBehavior.floating,
-                duration: const Duration(seconds: 3),
-              ),
-            );
+            SnackBarUtils.showError(context, state.message);
           }
         },
         builder: (context, state) {

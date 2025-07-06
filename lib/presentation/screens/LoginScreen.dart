@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes/core/utils/snackbar_utils.dart';
 import 'package:notes/presentation/bloc/auth/auth_bloc.dart';
 import 'package:notes/presentation/screens/NotesScreen.dart';
 
@@ -41,14 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
               MaterialPageRoute(builder: (context) => const NotesScreen()),
             );
           } else if (state is AuthError) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text(state.message),
-                backgroundColor: Colors.red,
-                behavior: SnackBarBehavior.floating,
-                duration: const Duration(seconds: 3),
-              ),
-            );
+            SnackBarUtils.showError(context, state.message);
           }
         },
         builder: (context, state) {
