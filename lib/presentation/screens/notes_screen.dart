@@ -9,6 +9,9 @@ import 'package:notes/presentation/widgets/loading_widget.dart';
 import 'package:notes/presentation/widgets/note_card.dart';
 import 'package:notes/presentation/widgets/note_dialog.dart';
 
+/// NotesScreen is the main screen for displaying and managing notes.
+/// It allows users to view, add, edit, and delete notes.
+/// The screen also provides a sign-out option in the app bar.
 class NotesScreen extends StatefulWidget {
   const NotesScreen({super.key});
 

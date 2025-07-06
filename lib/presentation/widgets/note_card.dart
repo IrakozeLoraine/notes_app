@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:notes/domain/entities/note.dart';
 
+/// NoteCard is a widget that displays a single note.
 class NoteCard extends StatelessWidget {
   final Note note;
   final Function(Note) onEdit;

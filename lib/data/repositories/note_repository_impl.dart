@@ -2,6 +2,7 @@ import 'package:notes/data/datasources/firebase_datasource.dart';
 import 'package:notes/domain/entities/note.dart';
 import 'package:notes/domain/repositories/note_repository.dart';
 
+/// Implementation of the NoteRepository interface that interacts with Firebase.
 class NoteRepositoryImpl implements NoteRepository {
   final FirebaseDataSource dataSource;
 

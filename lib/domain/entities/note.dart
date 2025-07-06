@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 
+/// Represents a Note entity in the application.
 class Note extends Equatable {
   final String id;
   final String text;

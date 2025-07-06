@@ -1,5 +1,6 @@
 import 'package:notes/domain/repositories/note_repository.dart';
 
+/// Use case for deleting a note.
 class DeleteNote {
   final NoteRepository repository;
 

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:notes/domain/entities/note.dart';
 
+/// NoteDialog is a dialog widget for adding or editing a note.
+/// It allows users to enter or modify the text of a note and save it.
 class NoteDialog extends StatefulWidget {
   final Note? note;
   final Function(String) onSave;

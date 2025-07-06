@@ -4,6 +4,9 @@ import 'package:notes/core/utils/snackbar_utils.dart';
 import 'package:notes/presentation/bloc/auth/auth_bloc.dart';
 import 'package:notes/presentation/screens/notes_screen.dart';
 
+/// LoginScreen is the screen where users can sign in or sign up.
+/// It allows users to enter their email and password, and toggle between sign-in and sign-up
+/// modes. The screen also handles authentication state changes and displays appropriate messages.
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 

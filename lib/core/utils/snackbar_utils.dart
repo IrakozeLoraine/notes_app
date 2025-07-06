@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// The SnackBarUtils class provides utility methods to show SnackBars for success and error messages in the app.
 class SnackBarUtils {
   static void showSuccess(BuildContext context, String message) {
     ScaffoldMessenger.of(context).showSnackBar(

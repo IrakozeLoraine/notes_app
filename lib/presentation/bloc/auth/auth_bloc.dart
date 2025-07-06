@@ -6,6 +6,7 @@ import 'package:notes/data/datasources/firebase_datasource.dart';
 part 'auth_event.dart';
 part 'auth_state.dart';
 
+/// Bloc for managing authentication state and actions.
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final FirebaseDataSource dataSource;
 
@@ -16,6 +17,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<SignOutRequested>(_onSignOutRequested);
   }
 
+  /// Checks the current authentication status and emits the appropriate state.
   void _onCheckAuthStatus(CheckAuthStatus event, Emitter<AuthState> emit) {
     final user = dataSource.getCurrentUser();
     if (user != null) {
@@ -25,6 +27,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     }
   }
 
+  /// Handles sign-in requests and emits the appropriate state based on the result.
   Future<void> _onSignInRequested(SignInRequested event, Emitter<AuthState> emit) async {
     emit(AuthLoading());
     try {
@@ -41,6 +44,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     }
   }
 
+  /// Handles sign-up requests and emits the appropriate state based on the result.
   Future<void> _onSignUpRequested(SignUpRequested event, Emitter<AuthState> emit) async {
     emit(AuthLoading());
     try {
@@ -57,6 +61,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     }
   }
 
+  /// Handles sign-out requests and emits the unauthenticated state.
   Future<void> _onSignOutRequested(SignOutRequested event, Emitter<AuthState> emit) async {
     try {
       await dataSource.signOut();
@@ -66,6 +71,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     }
   }
 
+  /// Returns a user-friendly error message based on the FirebaseAuthException code.
   String _getAuthErrorMessage(String code) {
     switch (code) {
       case 'user-not-found':

@@ -9,6 +9,7 @@ import 'package:notes/domain/usecases/update_note.dart';
 part 'notes_event.dart';
 part 'notes_state.dart';
 
+/// Bloc for managing notes in the application.
 class NotesBloc extends Bloc<NotesEvent, NotesState> {
   final GetNotes getNotes;
   final AddNote addNote;
@@ -27,6 +28,7 @@ class NotesBloc extends Bloc<NotesEvent, NotesState> {
     on<DeleteNoteEvent>(_onDeleteNote);
   }
 
+  /// Loads notes from the repository and emits the appropriate state.
   Future<void> _onLoadNotes(LoadNotes event, Emitter<NotesState> emit) async {
     emit(NotesLoading());
     try {
@@ -37,6 +39,7 @@ class NotesBloc extends Bloc<NotesEvent, NotesState> {
     }
   }
 
+  /// Handles adding a note and emits the appropriate state based on the result.
   Future<void> _onAddNote(AddNoteEvent event, Emitter<NotesState> emit) async {
     emit(NotesLoading());
     try {
@@ -48,6 +51,7 @@ class NotesBloc extends Bloc<NotesEvent, NotesState> {
     }
   }
 
+  /// Handles updating a note and emits the appropriate state based on the result.
   Future<void> _onUpdateNote(UpdateNoteEvent event, Emitter<NotesState> emit) async {
     emit(NotesLoading());
     try {
@@ -59,6 +63,7 @@ class NotesBloc extends Bloc<NotesEvent, NotesState> {
     }
   }
 
+  /// Handles deleting a note and emits the appropriate state based on the result.
   Future<void> _onDeleteNote(DeleteNoteEvent event, Emitter<NotesState> emit) async {
     try {
       await deleteNote(event.id);

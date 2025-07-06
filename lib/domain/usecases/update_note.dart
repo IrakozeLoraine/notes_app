@@ -1,5 +1,6 @@
 import 'package:notes/domain/repositories/note_repository.dart';
 
+/// Use case for updating a note.
 class UpdateNote {
   final NoteRepository repository;
 
