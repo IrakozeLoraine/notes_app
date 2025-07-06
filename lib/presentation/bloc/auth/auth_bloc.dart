@@ -78,6 +78,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         return 'Password is too weak';
       case 'invalid-email':
         return 'Invalid email address';
+      case 'invalid-credential':
+        return 'Invalid email or password';
       default:
         return 'Authentication failed';
     }

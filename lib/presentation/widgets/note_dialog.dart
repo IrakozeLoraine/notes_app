@@ -43,6 +43,7 @@ class _NoteDialogState extends State<NoteDialog> {
             hintText: 'Enter your note here...',
             border: OutlineInputBorder(),
           ),
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           maxLines: 5,
           validator: (value) {
             if (value == null || value.trim().isEmpty) {

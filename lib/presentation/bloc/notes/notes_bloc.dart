@@ -38,6 +38,7 @@ class NotesBloc extends Bloc<NotesEvent, NotesState> {
   }
 
   Future<void> _onAddNote(AddNoteEvent event, Emitter<NotesState> emit) async {
+    emit(NotesLoading());
     try {
       await addNote(event.text);
       final notes = await getNotes();
@@ -48,6 +49,7 @@ class NotesBloc extends Bloc<NotesEvent, NotesState> {
   }
 
   Future<void> _onUpdateNote(UpdateNoteEvent event, Emitter<NotesState> emit) async {
+    emit(NotesLoading());
     try {
       await updateNote(event.id, event.text);
       final notes = await getNotes();
