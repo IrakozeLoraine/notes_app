@@ -4,7 +4,7 @@ import 'package:notes/core/utils/snackbar_utils.dart';
 import 'package:notes/domain/entities/note.dart';
 import 'package:notes/presentation/bloc/auth/auth_bloc.dart';
 import 'package:notes/presentation/bloc/notes/notes_bloc.dart';
-import 'package:notes/presentation/screens/LoginScreen.dart';
+import 'package:notes/presentation/screens/login_screen.dart';
 import 'package:notes/presentation/widgets/loading_widget.dart';
 import 'package:notes/presentation/widgets/note_card.dart';
 import 'package:notes/presentation/widgets/note_dialog.dart';

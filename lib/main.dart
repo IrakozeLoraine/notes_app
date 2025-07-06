@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes/injection_container.dart' as di;
 import 'package:notes/presentation/bloc/auth/auth_bloc.dart';
 import 'package:notes/presentation/bloc/notes/notes_bloc.dart';
-import 'package:notes/presentation/screens/LoginScreen.dart';
+import 'package:notes/presentation/screens/login_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes/core/utils/snackbar_utils.dart';
 import 'package:notes/presentation/bloc/auth/auth_bloc.dart';
-import 'package:notes/presentation/screens/NotesScreen.dart';
+import 'package:notes/presentation/screens/notes_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
